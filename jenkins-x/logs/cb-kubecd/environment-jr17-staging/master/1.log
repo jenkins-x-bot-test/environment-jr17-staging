@@ -1,0 +1,44 @@
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-zlvgm[0m
+{"level":"warn","ts":1581701611.7333353,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581701611.7339277,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-4trcn[0m
+{"level":"warn","ts":1581701617.635846,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581701617.6385612,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-jr17-stag-9gtwb-shkbf[0m
+{"level":"warn","ts":1581701643.1588929,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581701644.1887243,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-jr17-staging.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:493c64005fa3685628fb05a97df5efcd74c5ec7c
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-override-requirements[0m
+running: gcloud projects describe  --format=json
+WARNING: unable to determine gke project number - failed to run 'gcloud projects describe  --format=json' command in directory '', output: 'ERROR: (gcloud.projects.describe) value for field [projectId] in collection [cloudresourcemanager.projects] is required but was not provided'
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+disabling ** step verify preinstall as using a local environment
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+Cloning the Jenkins X versions repo https://github.com/jstrachan/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+Showing logs for build [32mcb-kubecd-environment-jr17-stag-9gtwb-1[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo zloeber git+https://github.com/zloeber/helm-namespace@chart
+in ./helmfile.yaml: helm exited with status 1:
+  Error: could not find protocol handler for: git+https
+[31m
+Pipeline failed on stage 'release' : container 'step-helmfile-system'. The execution of the pipeline has stopped.[0m

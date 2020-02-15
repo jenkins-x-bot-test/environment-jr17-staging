@@ -3,10 +3,9 @@ env:
 - name: JX_SECRETS_YAML
   value: /tmp/secrets/jx/localSecrets/secrets.yml
 pipelineConfig:
+  agent:
+    image: jenkinsxio/jenkins-x-installer:0.0.24
   pipelines:
-    pipeline:
-      agent:
-        image: jenkinsxio/jenkins-x-installer:0.0.24
     overrides:
       - pipeline: release
         name: verify-preinstall
